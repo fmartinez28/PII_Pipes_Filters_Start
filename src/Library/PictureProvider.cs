@@ -16,7 +16,7 @@ namespace CompAndDel
         /// <returns>La imagen leida.</returns>
         public IPicture GetPicture(string path)
         {
-            Picture picture = new Picture(1, 1);
+            Picture picture = new Picture(1, 1, path);
             using (var image = Image.Load<Rgba32>(path))
             {
                 picture.Resize(image.Width, image.Height);

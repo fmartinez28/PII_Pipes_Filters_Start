@@ -3,12 +3,12 @@ using System.Drawing;
 
 namespace CompAndDel.Filters;
 
-public class TwitterFilter{
+public class TwitterFilter : IFilter{
 
     TwitterImage sender = new();
-    public IPicture Filter(string path, IPicture picture)
+    public IPicture Filter(IPicture picture)
     {
-        sender.PublishToTwitter("Enviado por el filtro", path);
+        sender.PublishToTwitter("Enviado por el filtro", picture.Path());
         return picture;
     }
 }

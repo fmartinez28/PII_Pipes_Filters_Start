@@ -13,6 +13,12 @@ namespace CompAndDel.Pipes{
         protected IPipe nextPipeFalse;
 
         protected bool eval;
+
+        public bool Evaluation{
+            get{
+                return eval;
+            }
+        }
         
         /// <summary>
         /// La cañería recibe una imagen, le aplica un filtro con respuesta bool y la envía a una secuencia bifurcada
@@ -42,13 +48,13 @@ namespace CompAndDel.Pipes{
             get { return this.filtro; }
         }
         /// <summary>
-        /// Recibe una dirección en el disco correspondiente a una imagen,
+        /// Recibe una imagen IPicture,
         /// la evalúa en un filtro y retorna un valor lógico
         /// </summary>
-        /// <param name="path">Ubicación local de la imagen</param>
-        public void Evaluate(string path)
+        /// <param name="picture">Imagen a evaluar</param>
+        public void Evaluate(IPicture picture)
         {
-            this.eval = this.filtro.Filter(path);
+            this.eval = this.filtro.Filter(picture);
         }
 
         public IPicture Send(IPicture picture){
