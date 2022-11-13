@@ -4,10 +4,10 @@ using System.Drawing;
 namespace CompAndDel.Filters;
 
 public class FilterConditional{
-    public bool Filter(string path)
+    public bool Filter(IPicture picture)
     {
         CognitiveFace face = new CognitiveFace(false);          //No hace falta marcar caras
-        face.Recognize(path);
+        face.Recognize(picture.Path());
         return face.FaceFound;
     }
 }

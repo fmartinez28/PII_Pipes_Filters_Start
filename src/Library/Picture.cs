@@ -11,6 +11,11 @@ namespace CompAndDel
     /// </summary>
     public class Picture : IPicture
     {
+        protected string path;
+
+        public string Path(){
+            return path;
+        }
         private Color[,] colorsMatrix;
 
         /// <summary>
@@ -18,10 +23,11 @@ namespace CompAndDel
         /// </summary>
         /// <param name="width">Ancho en pixels de la imagen.</param>
         /// <param name="height">Altura en pixels de la imagen.</param>
-        public Picture(Int32 width, Int32 height)
+        public Picture(Int32 width, Int32 height, string path)
         {
             this.colorsMatrix = new Color[width, height];
             this.colorsMatrix.Initialize();
+            this.path = path;
         }
 
         /// <summary>
@@ -100,7 +106,7 @@ namespace CompAndDel
         /// <returns>Clon de la imagen.</returns>
         public IPicture Clone()
         {
-            Picture pictureClone = new Picture(this.Width, this.Height);
+            Picture pictureClone = new Picture(this.Width, this.Height, this.path);
             for (int x = 0; x < pictureClone.Width; x++)
             {
                 for (int y = 0; y < pictureClone.Height; y++)

@@ -20,6 +20,7 @@ namespace CompAndDel.Pipes
             this.image = picture;
             return this.image;
         }
+        
 
     }
 }
