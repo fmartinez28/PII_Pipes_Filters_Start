@@ -1,0 +1,6 @@
+[submodule "PII_CognitiveAPI"]
+	path = PII_CognitiveAPI
+	url = https://github.com/ucudal/PII_CognitiveAPI
+[submodule "PII_TwitterApi"]
+	path = PII_TwitterApi
+	url = https://github.com/ucudal/PII_TwitterApi
